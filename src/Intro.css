@@ -1,0 +1,110 @@
+.intro {
+    height: calc(100vh - 125px);
+    background: #FF8078;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.intro-content {
+    flex: 1;
+    text-align: center;
+    min-height: 90%;
+}
+
+.intro-heading {
+    color: #FFCEEA;
+    font-size: 5rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+}
+
+.intro-p {
+    color: #FFF;
+    font-size: 2rem;
+    font-family: 'Space Mono', monospace;
+    width: 75vw;
+    max-width: 1000px;
+    margin: auto;
+    line-height: 1;
+}
+
+.arrow {
+    position: absolute;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 100px;
+    bottom: 25px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 168.99 99.99'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%2377fad7;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EAsset 6%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Crect class='cls-1' x='-9.71' y='38.99' width='119.41' height='22' transform='translate(49.99 -20.71) rotate(45)'/%3E%3Crect class='cls-1' x='59.29' y='38.99' width='119.41' height='22' transform='translate(-0.5 98.78) rotate(-45)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media(max-width: 768px) {
+    .arrow {
+        transform: scale(0.6) translateX(-50%);
+        width: 60px;
+    }
+}
+
+.circle {
+    padding: 130px;
+    border-radius: 50%;
+    opacity: 0.5;
+    position: absolute;
+    transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+
+.circle-1 {
+    background: linear-gradient(120deg, rgb(197, 255, 255) 0%, rgba(255,255,255,0) 100%);
+    top: 10%;
+    left: 10%;
+}
+
+.circle-2 {
+    background: linear-gradient(-30deg, rgb(197, 255, 255) 0%, rgba(255,255,255,0) 100%);
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 2500ms;
+}
+
+.star {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 126.97 120.93'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EAsset 7%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='125.47 60.47 92.02 69.74 113.63 96.91 81.1 84.74 82.64 119.43 63.49 90.45 44.33 119.43 45.87 84.73 13.34 96.91 34.96 69.74 1.5 60.47 34.96 51.19 13.34 24.02 45.87 36.2 44.33 1.5 63.49 30.48 82.64 1.5 81.1 36.2 113.63 24.02 92.02 51.19 125.47 60.47'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@media(max-width: 765px) {
+    .intro-heading {
+        font-size: 2.2rem;
+    }
+
+    .intro-p {
+        font-size: 1.3rem;
+    }
+
+    .circle-1 {
+        left: -6%;
+    }
+
+    .circle-2 {
+        right: -17%;
+    }
+}

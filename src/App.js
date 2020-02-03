@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Quiz from './components/Quiz'
+import axios from 'axios';
+import CountUp from 'react-countup';
+import {Helmet} from "react-helmet";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import './Quiz.css';
+import './Intro.css';
+import './share-modal.css';
+
+class App extends React.Component {
+  state = {
+    numOfEntries: 0
+  }
+  componentDidMount() {
+    axios.get(`https://v2-api.sheety.co/19076f60469ab49f49cd3be22285cd33/topicals/total`)
+        .then((res) => {
+            if (res && res.data && res.data.total) {
+                this.setState({
+                    numOfEntries: res.data.total['0'].total
+                })
+            }
+        })
+}
+
+  render() {
+    return (
+      <div className="wrap">
+        <Helmet>
+              <meta charSet="utf-8" />
+              <title>Skin, Sun & Stars | Topicals</title>
+              <link rel="canonical" href="https://mytopicals.com/skinsunandstars" />
+          </Helmet>
+        <div className="intro">
+          <div className="intro-content">
+            <h1 className="intro-heading">Skin, Sun & Stars</h1>
+            <p className="intro-p">
+              Input your info and receive your skin's star signs picked for your unique needs
+              
+              <small class="count">Join <CountUp end={this.state.numOfEntries} /> others who have gotten their skin’s zodiac.</small>
+            </p>
+            <span className="arrow"></span>
+            <span className="circle circle-1"></span>
+            <span className="circle circle-2"></span>
+          </div>
+        </div>
+        <Quiz />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,62 @@
+.share-modal {
+  background: #e54d47;
+  color: #fff;
+  padding: 25px 25px 125px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+  transition: all .25s ease-in-out;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 11;
+  width: calc(100vw - 15px);
+  border-radius: 10px 10px 0 0;
+  font-size: 1.2rem;
+  max-width: 365px;
+  font-weight: 700;
+  box-shadow: 0 0 42px #0000007d;
+  border: 2px solid #FFF;
+  border-bottom: 0;
+}
+
+.share-modal img {
+  width: 85px;
+  margin: 15px auto 10px;
+  display: block;
+  border-radius: 50%;
+  border: 17px solid #FFF;
+  box-shadow: 0px 6px #00000026;
+}
+
+.share-modal a {
+  display: block;
+  padding: 10px;
+  border-radius: 30px;
+  background: rgba(0,0,0,0.3);
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  margin: 18px 0 10px;
+  font-weight: 500;
+}
+
+.close-share-modal {
+  font-size: .9rem;
+  margin: 10px autp 0;
+  background: none !important;
+  text-decoration: underline !important;
+}
+  
+.share-modal.hide {
+  bottom: -100%;
+}
+
+@media(min-width: 768px) {
+  .share-modal {
+    right: 55px;
+    left: initial;
+    transform: initial;
+  }
+}
