@@ -14,7 +14,7 @@ class App extends React.Component {
     numOfEntries: 0
   }
   componentDidMount() {
-    axios.get(`https://v2-api.sheety.co/19076f60469ab49f49cd3be22285cd33/topicals/total`)
+    axios.get(`https://v2-api.sheety.co/ea57f67b579af1a26d164034c3bc694f/skinSunStars/total`)
         .then((res) => {
             if (res && res.data && res.data.total) {
                 this.setState({

@@ -88,7 +88,7 @@ class Quiz extends React.Component {
             }
         }, 5);
 
-        axios.post(`https://v2-api.sheety.co/19076f60469ab49f49cd3be22285cd33/topicals/quiz`, {
+        axios.post(`https://v2-api.sheety.co/ea57f67b579af1a26d164034c3bc694f/skinSunStars/quiz`, {
             "quiz": {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
